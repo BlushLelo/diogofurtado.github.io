@@ -16,7 +16,7 @@ body{
 }
 
 #menu{
-  border: 1px dashed black;
+  border: 1px black;
   margin-top: 2%;
 
   /*background: url("../img/BgMenu.png");*/
@@ -64,20 +64,22 @@ body{
 
 
 #recomecar{
+	
   position: fixed;
-  left: 30%;
-  top:60%;
-  font-size: 70px;
-  font-family: "Comic Sans MS";
-  border:3px solid;
+  left: 65%;
+  top:  79.5%;
+
+  border: solid black;
+  width: 12%;
+  height: 10.2%;
   
 }
 
 #final{
   position: fixed;
-  left: 30%;
-  top:40%;
-  font-size: 70px;
+  left: 34%;
+  top: 35%;
+  font-size: 50px;
   font-family: "Comic Sans MS";
 
   
@@ -95,21 +97,20 @@ body{
 
 #score{
   position: fixed;
-  left: 67.1%;
-  top:  4.3%;
-  font-size: 40px;
+  left: 62%;
+  top:  85.5%;
+  font-size: 35px;
   font-family: "Comic Sans MS";
 
 }
   
 #Cronometro{
   position: fixed;
-  left: 22%;
+  left: 20.5%;
   top:  85.5%;
-  font-size: 40px;
+  font-size: 35px;
   font-family: "Comic Sans MS";
-  border:2px dashed;
-  background-color:#E6E6FA;
+
 }
 
 

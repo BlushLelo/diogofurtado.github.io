@@ -32,7 +32,7 @@ var clientList = {
 	Pateta1: 'img/Pateta1.png',
 	Pateta2: 'img/Pateta2.png',
 	Patodonald1: 'img/Patodonald1.png',
-	surpresa: 'img/surpresa.jpg', 
+	Perdeu: 'img/Perdeu.png', 
 	Patodonald2: 'img/Patodonald2.png'
 }
 
@@ -40,9 +40,11 @@ var clientList = {
 var backgroundImages = {
 	BgGame:   'img/InGame.png',
 	BgMenu:   'img/BgMenu.png',
-	BotaoRegras:   'img/BotaoRegras.png',
 	BgFinal:  'img/BgFinal.png',
-	BotaoJogar:   'img/BotaoJogar.png'
+	BgRegras:  'img/BgRegras.png',
+	BotaoRegras:   'img/BotaoRegras.png',
+	BotaoJogar:   'img/BotaoJogar.png',
+	BotaoVoltar:' img/BotaoVoltar.png'
 
 };
 
@@ -136,7 +138,7 @@ var diveScore = document.createElement('div');
 var score = document.createElement('span');
 
 
-//-------------------------------- FUNÇÕES "GRÁFICAS" --------------------------------\\
+//-------------------------------- FUNÇÕES "GRÁFICAS" --------------------------------
 function main() {
 	
 
@@ -182,6 +184,18 @@ function main() {
  	imgBotaoRegras.setAttribute('width','100%');
  	imgBotaoRegras.setAttribute('onclick','mostrarRegras();');
  	diveBotaoRegras.appendChild(imgBotaoRegras);
+
+ 	//Botão Voltar
+ 	diveBotaoVoltar.setAttribute('id','botaoVoltar');
+	diveBotaoVoltar.style.display = 'none';
+	diveBotaoVoltar.setAttribute('onclick','voltarMenu()');
+	document.body.appendChild(diveBotaoVoltar);
+
+	var imgBotaoVoltar = document.createElement('img');
+ 	imgBotaoVoltar.setAttribute('src',backgroundImages.BotaoVoltar);
+ 	imgBotaoVoltar.setAttribute('height','100%');
+ 	imgBotaoVoltar.setAttribute('width','100%');
+ 	diveBotaoVoltar.appendChild(imgBotaoVoltar);
 }
 
 function mostrarRegras(){
@@ -189,6 +203,7 @@ function mostrarRegras(){
 
 	diveBotaoJogar.style.display = 'none';
 	diveBotaoRegras.style.display = 'none';
+	diveBotaoVoltar.style.display = 'initial';
 
 	var winWidth = window.innerWidth;
 	var winHeight = window.innerHeight;
@@ -197,14 +212,11 @@ function mostrarRegras(){
 
 	var ctx = canvMenu.getContext("2d");
 	drawInOrder(backgroundImages, function(images) {
-	ctx.drawImage(images.BgGame,0,0,canvMenu.width,canvMenu.height);		
+	ctx.drawImage(images.BgRegras,0,0,canvMenu.width,canvMenu.height);		
 
 	});
 
-	diveBotaoVoltar.setAttribute('id','botaoVoltar');
-	diveBotaoVoltar.style.display = 'initial';
-	diveBotaoVoltar.setAttribute('onclick','voltarMenu()');
-	document.body.appendChild(diveBotaoVoltar);
+	
 }
 
 function voltarMenu ()
@@ -274,10 +286,7 @@ function finalizarJogo(){
 		ctx.drawImage(images.BgFinal,0,0,c.width,c.height);
 
 	});
-	var pontFinal = document.createElement('div');
-	pontFinal.setAttribute('id','final1');
-	pontFinal.innerHTML = "Sua Pontuação Final é: ";
-	document.body.appendChild(pontFinal);
+	
 
 	var scoreFinal = document.createElement('div');
 	scoreFinal.setAttribute('id','final');
@@ -286,7 +295,6 @@ function finalizarJogo(){
 
 	var recomecar = document.createElement('div');
 	recomecar.setAttribute('id','recomecar');
-	recomecar.innerHTML = "Recomeçar";
 	recomecar.setAttribute('onclick','location.reload();');
 	document.body.appendChild(recomecar);
 	
@@ -728,7 +736,7 @@ function printarCliente(img1,img2,pedido,tempo){
 				window.clearInterval(intervalo);
 			}
 			if(i+1 ==tempo){
-				imgCliente0.setAttribute('src',clientList.surpresa);
+				imgCliente0.setAttribute('src',clientList.Perdeu);
 				clientes[0] = -1;
 				vida -= 1;
 				imglancheRandom0.style.display = 'none';
@@ -767,7 +775,7 @@ function printarCliente(img1,img2,pedido,tempo){
 				window.clearInterval(intervalo);
 			}
 			if(i+1 ==tempo){
-				imgCliente1.setAttribute('src',clientList.surpresa);
+				imgCliente1.setAttribute('src',clientList.Perdeu);
 				clientes[1] = -1;
 				vida -= 1
 				imglancheRandom1.style.display = 'none';
@@ -807,7 +815,7 @@ function printarCliente(img1,img2,pedido,tempo){
 				window.clearInterval(intervalo);
 			}
 			if(i+1 ==tempo){
-				imgCliente2.setAttribute('src',clientList.surpresa);
+				imgCliente2.setAttribute('src',clientList.Perdeu);
 				clientes[2] = -1;
 				vida -= 1
 				imglancheRandom2.style.display = 'none';
@@ -846,7 +854,7 @@ function printarCliente(img1,img2,pedido,tempo){
 				window.clearInterval(intervalo);
 			}
 			if(i+1 ==tempo){
-				imgCliente3.setAttribute('src',clientList.surpresa);
+				imgCliente3.setAttribute('src',clientList.Perdeu);
 				clientes[3] = -1;
 				vida -= 1;
 				imglancheRandom3.style.display = 'none';
@@ -885,7 +893,7 @@ function printarCliente(img1,img2,pedido,tempo){
 				window.clearInterval(intervalo);
 			}
 			if(i+1 ==tempo){
-				imgCliente4.setAttribute('src',clientList.surpresa);
+				imgCliente4.setAttribute('src',clientList.Perdeu);
 				clientes[4] = -1;
 				vida -= 1
 				imglancheRandom4.style.display = 'none';
